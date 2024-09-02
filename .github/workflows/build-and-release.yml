@@ -126,32 +126,15 @@ jobs:
           name: HeadsetControl-GUI_windows_64
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release v${{ github.ref }}
-          draft: false
-          prerelease: false
+        run: |
+          gh release create ${{ github.ref_name }} \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "Release ${{ github.ref_name }}
 
-      - name: Upload Linux Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./HeadsetControl-GUI_linux_64.zip
-          asset_name: HeadsetControl-GUI_linux_64.zip
-          asset_content_type: application/octet-stream
-
-      - name: Upload Windows Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./HeadsetControl-GUI_windows_64.zip
-          asset_name: HeadsetControl-GUI_windows_64.zip
-          asset_content_type: application/octet-stream
+          ## Credits to 
+          @LeoKlaus for the original [HeadsetControl-GUI](https://github.com/LeoKlaus/HeadsetControl-GUI)
+          @Sapd for [HeadsetController](https://github.com/Sapd/HeadsetControl)" \
+            HeadsetControl-GUI_linux_64.zip \
+            HeadsetControl-GUI_windows_64.zip
