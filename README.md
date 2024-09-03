@@ -1,4 +1,7 @@
 A simply remake of [HeadsetControl-GUI](https://github.com/LeoKlaus/HeadsetControl-GUI) by @LeoKlaus
+
+⚠️⚠️⚠️ Moved project to main Repo: [HeadsetControl-GUI](https://github.com/LeoKlaus/HeadsetControl-GUI) by @LeoKlaus ⚠️⚠️⚠️
+
 # HeadsetControl-GUI [![Github All Releases](https://img.shields.io/github/downloads/nicola02nb/headsetcontrol-gui/total.svg)]() [![license](https://img.shields.io/github/license/nicola02nb/HeadsetControl-GUI)]()
 This is a GUI for [Sapds great HeadsetControl](https://github.com/Sapd/HeadsetControl/).</br>
 It's just a frontend to graphically interact with the original HeadsetControl and has no functionality by itself.</br>
